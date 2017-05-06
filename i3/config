@@ -1,0 +1,271 @@
+# Constants
+  set $mod Mod4
+  set $term guake
+
+# Colours
+  set $base00 #101218
+  set $base01 #1f222d
+  set $base02 #252936
+  set $base03 #7780a1
+  set $base04 #C0C5CE
+  set $base05 #d1d4e0
+  set $base06 #C9CCDB
+  set $base07 #ffffff
+  set $base08 #ee829f
+  set $base09 #f99170
+  set $base0A #ffefcc
+  set $base0B #a5ffe1
+  set $base0C #97e0ff
+  set $base0D #97bbf7
+  set $base0E #c0b7f9
+  set $base0F #fcc09e
+
+# Icons
+  set $workspace1 "1"
+  set $workspace2 "2"
+  set $workspace3 "3"
+  set $workspace4 "4"
+  set $workspace5 "5"
+  set $workspace6 "6"
+  set $workspace7 "7"
+  set $workspace8 "8"
+  set $workspace9 "9"
+  set $workspace0 "0"
+
+  #set $workspaceA "1"
+  #set $workspaceB "2"
+  #set $workspaceC "3"
+  #set $workspaceD "4"
+  #set $workspaceE "5"
+  #set $workspaceF "6"
+  #set $workspaceG "7"
+  #set $workspaceH "8"
+  #set $workspaceI "9"
+  #set $workspaceJ "0"
+
+# Monitors
+  #force_xinerama yes
+  set $monitor1 "VGA-1"
+  #set $monitor2 "VGA-1"
+
+# General configuration
+  font pango:Liberation Mono 8 
+  floating_modifier $mod
+  hide_edge_borders both
+  new_window none
+  new_float none
+  smart_borders on
+  gaps inner 15
+  gaps outer 6
+  smart_gaps on
+
+#locker
+  bindsym $mod+l exec "i3lock-fancy -p"
+
+# Windows
+  bindsym $mod+Shift+q kill
+
+  #bindsym $mod+j focus left
+  #bindsym $mod+k focus down
+  #bindsym $mod+l focus up
+  #bindsym $mod+semicolon focus right
+
+  bindsym $mod+Left focus left
+  bindsym $mod+Down focus down
+  bindsym $mod+Up focus up
+  bindsym $mod+Right focus right
+
+  bindsym $mod+Shift+j move left
+  bindsym $mod+Shift+k move down
+  bindsym $mod+Shift+l move up
+  bindsym $mod+Shift+semicolon move right
+  
+  bindsym $mod+Shift+Left move left
+  bindsym $mod+Shift+Down move down
+  bindsym $mod+Shift+Up move up
+  bindsym $mod+Shift+Right move right
+  
+  bindsym $mod+h split h
+  bindsym $mod+v split v
+  
+  bindsym $mod+f fullscreen toggle
+  
+  bindsym $mod+s layout stacking
+  bindsym $mod+w layout tabbed
+  bindsym $mod+e layout toggle split
+  
+  bindsym $mod+Shift+space floating toggle
+  
+  #bindsym $mod+space focus mode_toggle
+  #bindsym $mod+a focus parent
+  #bindsym $mod+d focus child
+
+  bindsym $mod+r mode "  "
+  bindsym $mod+m move workspace to output left
+
+  mode "  " {
+    bindsym h resize shrink width 1 px or 1 ppt
+    bindsym j resize grow height 1 px or 1 ppt
+    bindsym k resize shrink height 1 px or 1 ppt
+    bindsym l resize grow width 1 px or 1 ppt
+
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Escape mode "default"
+  }
+
+# Workspaces
+  bindsym $mod+1 workspace $workspace1
+  bindsym $mod+2 workspace $workspace2
+  bindsym $mod+3 workspace $workspace3
+  bindsym $mod+4 workspace $workspace4
+  bindsym $mod+5 workspace $workspace5
+  bindsym $mod+6 workspace $workspace6
+  bindsym $mod+7 workspace $workspace7
+  bindsym $mod+8 workspace $workspace8
+  bindsym $mod+9 workspace $workspace9
+  bindsym $mod+0 workspace $workspace0
+
+  #bindsym $mod+Alt+1 workspace $workspaceA
+  #bindsym $mod+Alt+2 workspace $workspaceB
+  #bindsym $mod+Alt+3 workspace $workspaceC
+  #bindsym $mod+Alt+4 workspace $workspaceD
+  #bindsym $mod+Alt+5 workspace $workspaceE
+  #bindsym $mod+Alt+6 workspace $workspaceF
+  #bindsym $mod+Alt+7 workspace $workspaceG
+  #bindsym $mod+Alt+8 workspace $workspaceH
+  #bindsym $mod+Alt+9 workspace $workspaceI
+  #bindsym $mod+Alt+0 workspace $workspaceJ
+
+  bindsym $mod+Shift+1 move container to workspace $workspace1
+  bindsym $mod+Shift+2 move container to workspace $workspace2
+  bindsym $mod+Shift+3 move container to workspace $workspace3
+  bindsym $mod+Shift+4 move container to workspace $workspace4
+  bindsym $mod+Shift+5 move container to workspace $workspace5
+  bindsym $mod+Shift+6 move container to workspace $workspace6
+  bindsym $mod+Shift+7 move container to workspace $workspace7
+  bindsym $mod+Shift+8 move container to workspace $workspace8
+  bindsym $mod+Shift+9 move container to workspace $workspace9
+  bindsym $mod+Shift+0 move container to workspace $workspace0
+
+  #bindsym $mod+Shift+Alt+1 move container to workspace $workspaceA
+  #bindsym $mod+Shift+Alt+2 move container to workspace $workspaceB
+  #bindsym $mod+Shift+Alt+3 move container to workspace $workspaceC
+  #bindsym $mod+Shift+Alt+4 move container to workspace $workspaceD
+  #bindsym $mod+Shift+Alt+5 move container to workspace $workspaceE
+  #bindsym $mod+Shift+Alt+6 move container to workspace $workspaceF
+  #bindsym $mod+Shift+Alt+7 move container to workspace $workspaceG
+  #bindsym $mod+Shift+Alt+8 move container to workspace $workspaceH
+  #bindsym $mod+Shift+Alt+9 move container to workspace $workspaceI
+  #bindsym $mod+Shift+Alt+0 move container to workspace $workspaceJ
+
+# Monitors
+  workspace $workspace1 output $monitor1
+  workspace $workspace2 output $monitor1
+  workspace $workspace3 output $monitor1
+  workspace $workspace4 output $monitor1
+  workspace $workspace5 output $monitor1
+  workspace $workspace6 output $monitor1
+  workspace $workspace7 output $monitor1
+  workspace $workspace8 output $monitor1
+  workspace $workspace9 output $monitor1
+  workspace $workspace0 output $monitor1
+  
+  #workspace $workspaceA output $monitor2
+  #workspace $workspaceB output $monitor2
+  #workspace $workspaceC output $monitor2
+  #workspace $workspaceD output $monitor2
+  #workspace $workspaceE output $monitor2
+  #workspace $workspaceF output $monitor2
+  #workspace $workspaceG output $monitor2
+  #workspace $workspaceH output $monitor2
+  #workspace $workspaceI output $monitor2
+  #workspace $workspaceJ output $monitor2
+
+
+# i3
+  bindsym $mod+Shift+c reload
+  bindsym $mod+Shift+r restart
+  bindsym $mod+Shift+e exit 
+
+# Applications
+  #bindsym $mod+Return exec $term
+  bindsym $mod+Ctrl+i exec firefox
+  bindsym $mod+Ctrl+m exec quodlibet
+  bindsym $mod+Ctrl+f exec franz-bin
+  bindsym $mod+Ctrl+v exec pavucontrol
+  bindsym $mod+d exec "rofi -show run"
+
+# Floating
+  for_window [class="Pavucontrol"] floating enable
+  for_window [class="Main.py"] floating enable
+
+# Volume & Media Bindings
+  bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down
+  bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up
+  bindsym XF86AudioMute exec --no-startup-id pulseaudio-ctl mute
+  bindsym XF86AudioPlay exec playerctl play-pause
+  bindsym XF86AudioPause exec playerctl pause
+  bindsym XF86AudioNext exec playerctl next
+  bindsym XF86AudioPrev exec playerctl previous
+
+# Status bar
+#  bar {
+#    font pango:Liberation Mono 10, FontAwesome 10 
+#    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#    status_command i3status
+#    position top
+#    height 25
+# 
+#    colors {
+#      separator $base03
+#      background $base01
+#      statusline $base05
+#
+#      # class            border  background text
+#      focused_workspace  $base01 $base01    $base07
+#      active_workspace   $base01 $base02    $base03
+#      inactive_workspace $base01 $base01    $base03
+#      urgent_workspace   $base01 $base01    $base08
+#    }
+#
+#   colors {
+#      background #002b36cc
+#      statusline #93a1a1
+#      separator #073642
+#
+#      focused_workspace  #073642 #073642 #93a1a1
+#      #active_workspace   #93a1a1 #93a1a1 #268bd2
+#      inactive_workspace #002b36 #002b36 #586e75
+#      urgent_workspace   #dc322f #dc322f #93a1a1
+#    }
+#}
+
+# Window colours
+
+  # class                 border  background text    indicator
+  #client.focused          $base01 $base01    $base07 $base0F
+  #client.focused_inactive $base02 $base02    $base03 $base0F
+  #client.unfocused        $base02 $base02    $base03 $base0F
+  #client.urgent           $base02 $base08    $base00 $base0F
+  #client.placeholder
+  #client.background       $base01
+
+# class                 border  backgr. text    indicator child_border
+#client.focused          #002b36 #002b36 #eee8d5 #002b36	  #073642
+#client.focused_inactive #002b36 #002b36 #586e75 #002b36   #073642
+#client.unfocused        #002b36 #002b36 #586e75 #002b36   #073642
+#client.urgent           #2f343a #900000 #ffffff #2f343a   #073642
+#client.placeholder      #000000 #0c0c0c #586e75 #000000   #073642
+#client.background       #002b36
+
+# Autostart programs
+#exec --no-startup-id "nitrogen --restore"
+
+#exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpaper/creepy.jpg
+#exec_always --no-startup-id $HOME/.config/i3/polybar/run_polybar.sh
+#exec_always --no-startup-id polybar -c $HOME/.config/polybar/polybar.conf i3
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
