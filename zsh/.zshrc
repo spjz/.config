@@ -1,5 +1,5 @@
 # record current working directory {{{
-	CWD=exec pwd
+  CWD=$(exec pwd)
 # }}}
 
 # load zgen {{{
